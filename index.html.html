@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tic tac toe</title>
+    <style>
+        h1{
+            text-align: center;
+            background-color: blueviolet;
+        }
+        td{
+            height: 120px;
+            width: 120px;
+            border: 5px black solid;
+            font-size: 80px;
+            text-align: center;
+            background-color: darkturquoise;
+        }
+    </style>
+</head>
+<body>
+    <H1>TIC TAC TOE</H1>
+    
+
+    
+    <script>
+        var currentplayer = "x";
+      
+
+        var board = document.createElement('div');
+        board.style.width ="300px";
+        board.style.display ="flex";
+        board.style.flexDirection ="row";
+        board.style.flexWrap = "wrap";
+       board.style.flexWrap ="center"
+        
+        
+        
+        
+        
+
+        for (let index = 1; index <= 9; index++) {
+            var box = document.createElement('div');
+            box.style.height = "100px";
+            box.style.width ="32%";
+            box.style.textAlign ="center";
+            box.style.fontSize ="80px"
+           
+            box.setAttribute("id", index);
+            box.style.border= "1px solid black"
+            box. style.backgroundColor = "Aquamarine"
+            box.addEventListener('click', function () {
+                if (this.innerText.length == 0){
+                if (currentplayer == "x") {
+                    this.innerText = currentplayer;
+                    currentplayer ="O";
+                }else {
+                    this.innerText = currentplayer;
+                    currentplayer = "x"
+                }
+            }
+            })
+            board.appendChild(box);
+        }
+         document.body.appendChild(board)  
+
+    </script>
+</body>
+</html>
